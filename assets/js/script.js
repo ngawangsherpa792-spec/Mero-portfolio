@@ -18,12 +18,44 @@ document.addEventListener('DOMContentLoaded', () => {
     initStatCounters();
     initHeaderScroll();
     initActiveNav();
+    initTextScramble();
+
+    // ── Text Scramble ──
+    function initTextScramble() {
+        const chars = '!<>-_\\/[]{}—=+*^?#________';
+        const scrambleElements = document.querySelectorAll('.hero-name, .section-title');
+
+        scrambleElements.forEach(el => {
+            const originalText = el.innerText;
+            if (!originalText) return;
+
+            ScrollTrigger.create({
+                trigger: el,
+                start: 'top 90%',
+                onEnter: () => {
+                    let iteration = 0;
+                    const interval = setInterval(() => {
+                        el.innerText = originalText.split('').map((char, index) => {
+                            if (index < iteration) return originalText[index];
+                            return chars[Math.floor(Math.random() * chars.length)];
+                        }).join('');
+
+                        if (iteration >= originalText.length) clearInterval(interval);
+                        iteration += 1 / 3;
+                    }, 30);
+                }
+            });
+        });
+    }
 
     // ── Cursor ──
     function initCursor() {
         if (window.matchMedia('(pointer: coarse)').matches) return;
         const outer = document.querySelector('.cursor-outer');
         const inner = document.querySelector('.cursor-inner');
+        if (!outer || !inner) return;
+
+        document.body.classList.add('has-custom-cursor');
         document.addEventListener('mousemove', e => {
             gsap.to(outer, { x: e.clientX, y: e.clientY, xPercent: -50, yPercent: -50, duration: 0.15 });
             gsap.to(inner, { x: e.clientX, y: e.clientY, xPercent: -50, yPercent: -50, duration: 0.05 });
