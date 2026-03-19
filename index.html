@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of Ngawang Sherpa — Cybersecurity & AI/ML Specialist. Explore projects in malware development, AI agents, YOLO object detection, and more.">
+    <title>Ngawang Sherpa | Cybersecurity & AI/ML Specialist</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-outer"></div>
+    <div class="cursor-inner"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-ring"></div>
+        <span class="loader-text mono-text">INITIALIZING...</span>
+    </div>
+
+    <!-- Navigation -->
+    <header id="main-header">
+        <nav>
+            <div class="logo">NS<span class="accent">.</span></div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ===================== HERO ===================== -->
+        <section id="hero" class="hero-section">
+            <canvas id="particles-canvas"></canvas>
+            <div class="container hero-content">
+                <div class="hero-badge mono-text">
+                    <span class="badge-dot"></span> Available for Collaboration
+                </div>
+                <h1 class="hero-name">Ngawang <span class="accent">Sherpa</span></h1>
+                <div class="hero-typing-wrapper">
+                    <span class="hero-typing-prefix mono-text">&gt;&gt; </span>
+                    <span id="typed-text" class="mono-text"></span>
+                    <span class="typing-cursor">|</span>
+                </div>
+                <p class="hero-desc">Independent Researcher & Developer specializing in Malware Analysis, AI Automation,
+                    and Advanced Security Systems.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary magnetic-btn">
+                        <span>View Projects</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M7 17l9.2-9.2M17 17V7H7" />
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-outline magnetic-btn">Get In Touch</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-pill">
+                    <div class="scroll-dot"></div>
+                </div>
+                <span class="scroll-text">Scroll down</span>
+            </div>
+        </section>
+
+        <!-- ===================== STATS BANNER ===================== -->
+        <section class="stats-banner">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <span class="stat-num" data-target="8">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-desc">Projects Built</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="2">0</span>
+                    <span class="stat-desc">Core Domains</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="5">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-desc">Tools & Frameworks</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="100">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-desc">Passion Driven</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== ABOUT ===================== -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header" data-reveal="bottom">
+                    <h3 class="section-tag mono-text"><span class="tag-line"></span> WHO AM I</h3>
+                    <h2 class="section-title">Bridging the gap between <span class="accent">Silicon</span> and <span
+                            class="accent">Security</span>.</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text" data-reveal="left">
+                        <p>I am <strong>Ngawang Sherpa</strong>, a dedicated professional at the intersection of <span
+                                class="accent">Cybersecurity</span> and <span class="accent">Machine Learning</span>. My
+                            work focuses on building resilient systems and intelligent agents that can adapt to the
+                            evolving threat landscape.</p>
+                        <p>From developing surveillance systems to creating local LLM-powered agents, I strive to push
+                            the boundaries of what's possible in autonomous tech and digital defense.</p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🛡️</div>
+                                <div>
+                                    <h4>Cybersecurity</h4>
+                                    <p>Reverse Engineering & Proactive Defense</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🤖</div>
+                                <div>
+                                    <h4>AI / ML</h4>
+                                    <p>Model Development & Agent Automation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-terminal" data-reveal="right">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <span class="terminal-dot red"></span>
+                                <span class="terminal-dot yellow"></span>
+                                <span class="terminal-dot green"></span>
+                                <span class="terminal-title mono-text">ngawang@kali:~</span>
+                            </div>
+                            <div class="terminal-body mono-text">
+                                <div class="terminal-line"><span class="term-prompt">$</span> whoami</div>
+                                <div class="terminal-output">Ngawang Sherpa</div>
+                                <div class="terminal-line"><span class="term-prompt">$</span> cat skills.txt</div>
+                                <div class="terminal-output">Malware Analysis | Firewall Config</div>
+                                <div class="terminal-output">Phishing Simulation | YOLO Detection</div>
+                                <div class="terminal-output">LLM Agents | Spam Detection</div>
+                                <div class="terminal-line"><span class="term-prompt">$</span> cat location.txt</div>
+                                <div class="terminal-output">📍 Kathmandu, Nepal</div>
+                                <div class="terminal-line"><span class="term-prompt">$</span> echo $STATUS</div>
+                                <div class="terminal-output accent">Open to opportunities ✓</div>
+                                <div class="terminal-line typing-line"><span class="term-prompt">$</span> <span
+                                        class="terminal-cursor">_</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SKILLS ===================== -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header center" data-reveal="bottom">
+                    <h3 class="section-tag mono-text"><span class="tag-line"></span> ARSENAL</h3>
+                    <h2 class="section-title">Tech <span class="accent">Stack</span></h2>
+                </div>
+                <div class="skills-orbit" data-reveal="bottom">
+                    <div class="skill-pill">Python</div>
+                    <div class="skill-pill">C / C++</div>
+                    <div class="skill-pill">JavaScript</div>
+                    <div class="skill-pill">PyTorch</div>
+                    <div class="skill-pill">YOLOv8</div>
+                    <div class="skill-pill">OpenCV</div>
+                    <div class="skill-pill">TensorFlow</div>
+                    <div class="skill-pill">Node.js</div>
+                    <div class="skill-pill">Linux / Kali</div>
+                    <div class="skill-pill">Wireshark</div>
+                    <div class="skill-pill">Metasploit</div>
+                    <div class="skill-pill">Nmap</div>
+                    <div class="skill-pill">Burp Suite</div>
+                    <div class="skill-pill">Docker</div>
+                    <div class="skill-pill">Git</div>
+                    <div class="skill-pill">Ollama</div>
+                    <div class="skill-pill">Flask</div>
+                    <div class="skill-pill">Assembly</div>
+                </div>
+
+                <div class="expertise-grid" data-reveal="bottom">
+                    <div class="expertise-card">
+                        <div class="card-glow"></div>
+                        <div class="card-icon">⚡</div>
+                        <h3>Cybersecurity</h3>
+                        <ul>
+                            <li>Malware Development & Analysis</li>
+                            <li>Advanced Firewall Configuration</li>
+                            <li>Phishing Simulation & Training</li>
+                            <li>Network Surveillance Systems</li>
+                        </ul>
+                    </div>
+                    <div class="expertise-card">
+                        <div class="card-glow"></div>
+                        <div class="card-icon">🧠</div>
+                        <h3>AI & Machine Learning</h3>
+                        <ul>
+                            <li>Autonomous Robotics (Claw Bot)</li>
+                            <li>LLM-based CLI Agents</li>
+                            <li>Object Detection (YOLO)</li>
+                            <li>NLP & Spam Detection Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== PROJECTS ===================== -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header" data-reveal="bottom">
+                    <h3 class="section-tag mono-text"><span class="tag-line"></span> LATEST WORKS</h3>
+                    <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+                </div>
+
+                <div class="project-filters" data-reveal="bottom">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="cyber">Cybersecurity</button>
+                    <button class="filter-btn" data-filter="ai">AI / ML</button>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card" data-category="cyber" data-reveal="bottom">
+                        <div class="project-number mono-text">01</div>
+                        <div class="project-content">
+                            <span class="project-label">Cybersecurity</span>
+                            <h3>Custom Malware Development</h3>
+                            <p>Research project focused on understanding attack vectors and developing defensive
+                                countermeasures through controlled environment malware creation.</p>
+                            <div class="project-tags">
+                                <span>C++</span><span>Assembly</span><span>Reverse Engineering</span>
+                            </div>
+                        </div>
+                        <div class="project-arrow">→</div>
+                    </div>
+
+                    <div class="project-card" data-category="cyber" data-reveal="bottom">
+                        <div class="project-number mono-text">02</div>
+                        <div class="project-content">
+                            <span class="project-label">Cybersecurity</span>
+                            <h3>Firewall & Surveillance System</h3>
+                            <p>Enterprise-grade firewall combined with an intelligent camera surveillance system for
+                                comprehensive network and physical security.</p>
+                            <div class="project-tags">
+                                <span>PFSense</span><span>OpenCV</span><span>Network Security</span>
+                            </div>
+                        </div>
+                        <div class="project-arrow">→</div>
+                    </div>
+
+                    <div class="project-card" data-category="cyber" data-reveal="bottom">
+                        <div class="project-number mono-text">03</div>
+                        <div class="project-content">
+                            <span class="project-label">Cybersecurity</span>
+                            <h3>Phishing Simulation Platform</h3>
+                            <p>Comprehensive simulation platform to test and educate users on sophisticated social
+                                engineering attacks in controlled environments.</p>
+                            <div class="project-tags">
+                                <span>Social Engineering</span><span>HTML/JS</span><span>Data Analytics</span>
+                            </div>
+                        </div>
+                        <div class="project-arrow">→</div>
+                    </div>
+
+                    <div class="project-card" data-category="ai" data-reveal="bottom">
+                        <div class="project-number mono-text">04</div>
+                        <div class="project-content">
+                            <span class="project-label">AI / ML</span>
+                            <h3>Open Claw-like Bot</h3>
+                            <p>Custom robotic arm system integrated with local AI for autonomous task execution, motion
+                                planning, and intelligent object manipulation.</p>
+                            <div class="project-tags">
+                                <span>Robotics</span><span>Python</span><span>Neural Networks</span>
+                            </div>
+                        </div>
+                        <div class="project-arrow">→</div>
+                    </div>
+
+                    <div class="project-card" data-category="ai" data-reveal="bottom">
+                        <div class="project-number mono-text">05</div>
+                        <div class="project-content">
+                            <span class="project-label">AI / ML</span>
+                            <h3>CLI Agent (Claude Code Style)</h3>
+                            <p>Terminal-based AI agent for developer productivity. Powered by local LLMs via Ollama,
+                                optimized for low-resource environments.</p>
+                            <div class="project-tags">
+                                <span>LLM</span><span>Ollama</span><span>Agentic AI</span>
+                            </div>
+                        </div>
+                        <div class="project-arrow">→</div>
+                    </div>
+
+                    <div class="project-card" data-category="ai" data-reveal="bottom">
+                        <div class="project-number mono-text">06</div>
+                        <div class="project-content">
+                            <span class="project-label">AI / ML</span>
+                            <h3>Spam Detection System</h3>
+                            <p>NLP-based classification system that uses machine learning to detect and filter spam
+                                messages with high accuracy in real-time.</p>
+                            <div class="project-tags">
+                                <span>NLP</span><span>Scikit-learn</span><span>Python</span>
+                            </div>
+                        </div>
+                        <div class="project-arrow">→</div>
+                    </div>
+
+                    <div class="project-card" data-category="ai" data-reveal="bottom">
+                        <div class="project-number mono-text">07</div>
+                        <div class="project-content">
+                            <span class="project-label">AI / ML</span>
+                            <h3>YOLO Object Detection</h3>
+                            <p>Real-time object detection using YOLOv8 for security applications including people
+                                tracking and anomaly detection.</p>
+                            <div class="project-tags">
+                                <span>Computer Vision</span><span>PyTorch</span><span>YOLOv8</span>
+                            </div>
+                        </div>
+                        <div class="project-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== CONTACT ===================== -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header center" data-reveal="bottom">
+                    <h3 class="section-tag mono-text"><span class="tag-line"></span> GET IN TOUCH</h3>
+                    <h2 class="section-title">Let's <span class="accent">Collaborate</span></h2>
+                    <p class="section-subtitle">I'm always open to discussing research opportunities, project
+                        collaborations, or security audits.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info" data-reveal="left">
+                        <div class="contact-card">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Kathmandu, Nepal</span>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:contact@ngawang.tech"
+                                    class="contact-value">ngawangsherpa792@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">💻</div>
+                            <div>
+                                <span class="contact-label">GitHub</span>
+                                <a href="#" class="contact-value">github.com/Hauntdog</a>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" data-reveal="right">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label mono-text">Name</label>
+                                <input type="text" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label mono-text">Email</label>
+                                <input type="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label mono-text">Message</label>
+                            <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary magnetic-btn">
+                            <span>Send Message</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="logo">NS<span class="accent">.</span></div>
+                <p class="footer-tagline">Cybersecurity & AI/ML Specialist</p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2026 Ngawang Sherpa. Built with passion.</p>
+            </div>
+            <div class="footer-right">
+                <a href="#" class="social-link" aria-label="GitHub">GH</a>
+                <a href="#" class="social-link" aria-label="LinkedIn">LI</a>
+                <a href="#" class="social-link" aria-label="Twitter">TW</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
