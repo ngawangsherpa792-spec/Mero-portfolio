@@ -21,6 +21,16 @@
     --max-w: 1140px;
 }
 
+/* ---- CUSTOM SCROLLBAR ---- */
+::-webkit-scrollbar { width:8px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { 
+    background: var(--text-muted); 
+    border-radius: 10px; 
+    border: 2px solid var(--bg-dark);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
 /* ---- RESET ---- */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; overflow-x:hidden; }
@@ -320,19 +330,34 @@ section { padding:100px 0; }
 
 .projects-grid { display:flex; flex-direction:column; gap:1rem; }
 .project-card {
-    display:grid; grid-template-columns:80px 1fr 40px;
-    align-items:center; gap:2rem;
+    display:grid; grid-template-columns:220px 1fr 40px;
+    align-items:center; gap:2.5rem;
     background:var(--bg-card); border:1px solid var(--border);
-    border-radius:14px; padding:2rem 2.5rem;
+    border-radius:18px; padding:1.2rem;
     transition:var(--transition); text-decoration: none;
-    color: inherit;
+    color: inherit; overflow: hidden;
+    position: relative;
 }
 .project-card:hover {
     border-color:var(--border-hover);
     background:rgba(0,212,255,0.03);
-    transform:translateX(8px);
+    transform:translateY(-5px);
 }
-.project-number { font-size:2.5rem; font-weight:800; color:var(--border); transition:var(--transition); }
+.project-img-wrapper {
+    height: 140px; width: 100%;
+    border-radius: 12px; overflow: hidden;
+    background: #000;
+}
+.project-img-wrapper img {
+    width: 100%; height: 100%; object-fit: cover;
+    opacity: 0.7; transition: var(--transition);
+}
+.project-card:hover .project-img-wrapper img { opacity: 1; transform: scale(1.05); }
+.project-number { 
+    position: absolute; top: 1.5rem; right: 5rem;
+    font-size: 3rem; font-weight: 900; color: var(--border); 
+    transition: var(--transition); z-index: 0; opacity: 0.5;
+}
 .project-card:hover .project-number { color:var(--accent); }
 .project-label {
     display:inline-block; font-size:0.65rem; font-weight:700;

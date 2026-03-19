@@ -19,6 +19,37 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeaderScroll();
     initActiveNav();
     initTextScramble();
+    initLenis();
+    initTiltEffect();
+
+    // ── Smooth Scroll (Lenis) ──
+    function initLenis() {
+        const lenis = new Lenis();
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+    }
+
+    // ── 3D Tilt Effect ──
+    function initTiltEffect() {
+        if (window.matchMedia('(pointer: coarse)').matches) return;
+        const cards = document.querySelectorAll('.expertise-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 8;
+                const rotateY = (centerX - x) / 8;
+                gsap.to(card, { rotateX, rotateY, transformPerspective: 1000, duration: 0.5, ease: 'power2.out' });
+            });
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.8, ease: 'power2.out' });
+            });
+        });
+    }
 
     // ── Text Scramble ──
     function initTextScramble() {
