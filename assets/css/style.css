@@ -437,6 +437,75 @@ footer {
 }
 .social-link:hover { border-color:var(--accent); color:var(--accent); background:rgba(0,212,255,0.05); }
 
+/* ---- GLITCH EFFECT (PERFORMANCE OPTIMIZED) ---- */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+/* Pseudo-elements for the glitch layers */
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s;
+}
+
+/* Cyan/Blue layer */
+.glitch::before {
+    text-shadow: -2px 0 var(--accent);
+    color: #fff;
+    z-index: -1;
+}
+
+/* Purple/Magenta layer */
+.glitch::after {
+    text-shadow: 2px 0 var(--accent-purple);
+    color: #fff;
+    z-index: -2;
+}
+
+/* Active state triggered by JS for "bursts" */
+.glitch.active-glitch::before {
+    opacity: 1;
+    animation: glitch-anim-1 0.2s infinite linear alternate-reverse;
+}
+
+.glitch.active-glitch::after {
+    opacity: 1;
+    animation: glitch-anim-2 0.3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% { clip-path: inset(20% 0 10% 0); transform: translate(-2px, -1px); }
+    20% { clip-path: inset(60% 0 5% 0); transform: translate(1px, 2px); }
+    40% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, -2px); }
+    60% { clip-path: inset(80% 0 20% 0); transform: translate(2px, 1px); }
+    80% { clip-path: inset(30% 0 50% 0); transform: translate(-2px, 1px); }
+    100% { clip-path: inset(50% 0 30% 0); transform: translate(1px, -1px); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip-path: inset(10% 0 80% 0); transform: translate(2px, 1px); }
+    20% { clip-path: inset(50% 0 40% 0); transform: translate(-1px, -2px); }
+    40% { clip-path: inset(30% 0 60% 0); transform: translate(1px, 2px); }
+    60% { clip-path: inset(70% 0 10% 0); transform: translate(-2px, -1px); }
+    80% { clip-path: inset(40% 0 30% 0); transform: translate(2px, -1px); }
+    100% { clip-path: inset(20% 0 50% 0); transform: translate(-1px, 1px); }
+}
+
+/* Optimization: Enable GPU for animated elements */
+.hero-name, .section-title, .glitch {
+    will-change: transform, opacity, clip-path;
+}
+
 /* ---- RESPONSIVE ---- */
 @media (max-width:968px) {
     .menu-toggle { display:flex; }

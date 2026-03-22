@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTextScramble();
     initLenis();
     initTiltEffect();
+    initGlitchEffect();
 
     // ── Smooth Scroll (Lenis) ──
     function initLenis() {
@@ -54,11 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ── Text Scramble ──
+    // ── Text Scramble (Optimized) ──
     function initTextScramble() {
-        if (window.matchMedia('(pointer: coarse)').matches) return; // Disable on mobile as it's CPU intensive
+        if (window.matchMedia('(pointer: coarse)').matches) return;
         const chars = '!<>-_\\/[]{}—=+*^?#________';
-        const scrambleElements = document.querySelectorAll('.hero-name, .section-title');
+        // Only target section titles to avoid conflict with hero glitch
+        const scrambleElements = document.querySelectorAll('.section-title');
 
         scrambleElements.forEach(el => {
             const originalText = el.innerText;
@@ -69,17 +71,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: 'top 90%',
                 onEnter: () => {
                     let iteration = 0;
-                    const interval = setInterval(() => {
+                    const startTime = performance.now();
+                    const duration = 1000; // 1 second reveal
+
+                    const update = (now) => {
+                        const elapsed = now - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        iteration = progress * originalText.length;
+
                         el.innerText = originalText.split('').map((char, index) => {
                             if (index < iteration) return originalText[index];
+                            if (char === ' ') return ' ';
                             return chars[Math.floor(Math.random() * chars.length)];
                         }).join('');
 
-                        if (iteration >= originalText.length) clearInterval(interval);
-                        iteration += 1 / 3;
-                    }, 30);
+                        if (progress < 1) {
+                            requestAnimationFrame(update);
+                        }
+                    };
+                    requestAnimationFrame(update);
                 }
             });
+        });
+    }
+
+    // ── Glitch Effect (High Performance) ──
+    function initGlitchEffect() {
+        const elements = document.querySelectorAll('.glitch');
+        elements.forEach(el => {
+            // Function to trigger a single glitch burst
+            const triggerBurst = () => {
+                if (document.hidden) return; // Don't run if tab is inactive
+                
+                el.classList.add('active-glitch');
+                // Shorter burst for better performance and "snap"
+                setTimeout(() => {
+                    el.classList.remove('active-glitch');
+                }, 200 + Math.random() * 200);
+
+                // Schedule next burst (2-7 seconds)
+                setTimeout(triggerBurst, 2000 + Math.random() * 5000);
+            };
+
+            // Start first burst logic
+            setTimeout(triggerBurst, 4000);
+
+            // Trigger on hover
+            el.addEventListener('mouseenter', () => el.classList.add('active-glitch'));
+            el.addEventListener('mouseleave', () => el.classList.remove('active-glitch'));
         });
     }
 
