@@ -59,35 +59,31 @@ document.addEventListener('DOMContentLoaded', () => {
     function initTextScramble() {
         if (window.matchMedia('(pointer: coarse)').matches) return;
         const chars = '!<>-_\\/[]{}—=+*^?#________';
-        // Only target section titles to avoid conflict with hero glitch
         const scrambleElements = document.querySelectorAll('.section-title');
 
         scrambleElements.forEach(el => {
-            const originalText = el.innerText;
+            const originalText = el.textContent; // Use textContent for speed
             if (!originalText) return;
 
             ScrollTrigger.create({
                 trigger: el,
-                start: 'top 90%',
+                start: 'top 95%', // Earlier trigger
                 onEnter: () => {
-                    let iteration = 0;
                     const startTime = performance.now();
-                    const duration = 1000; // 1 second reveal
+                    const duration = 800; // Faster reveal
 
                     const update = (now) => {
                         const elapsed = now - startTime;
                         const progress = Math.min(elapsed / duration, 1);
-                        iteration = progress * originalText.length;
+                        const iteration = progress * originalText.length;
 
-                        el.innerText = originalText.split('').map((char, index) => {
+                        el.textContent = originalText.split('').map((char, index) => {
                             if (index < iteration) return originalText[index];
                             if (char === ' ') return ' ';
                             return chars[Math.floor(Math.random() * chars.length)];
                         }).join('');
 
-                        if (progress < 1) {
-                            requestAnimationFrame(update);
-                        }
+                        if (progress < 1) requestAnimationFrame(update);
                     };
                     requestAnimationFrame(update);
                 }
@@ -172,28 +168,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.beginPath(); ctx.arc(this.x, this.y, this.s, 0, Math.PI * 2); ctx.fill();
             }
         }
-        const count = window.innerWidth < 768 ? 30 : 80;
+        const isMobile = window.innerWidth < 768;
+        const count = isMobile ? 25 : 80;
         for (let i = 0; i < count; i++) particles.push(new P());
+        
+        // Connections are disabled on mobile for extreme performance
+        const drawConnections = !isMobile;
 
         let fc = 0;
         function animate() {
             if (!isActive) return;
             fc++;
+            
+            // Render every 2nd frame to save CPU
             if (fc % 2 === 0) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 particles.forEach(p => { p.update(); p.draw(); });
-                // connections
-                ctx.globalAlpha = 0.07; ctx.strokeStyle = '#00d4ff'; ctx.lineWidth = 0.5;
-                for (let i = 0; i < particles.length; i++) {
-                    let conn = 0;
-                    for (let j = i + 1; j < particles.length && conn < 2; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        if (Math.abs(dx) < 120 && Math.abs(dy) < 120) {
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.stroke(); conn++;
+                
+                if (drawConnections) {
+                    ctx.globalAlpha = 0.07; ctx.strokeStyle = '#00d4ff'; ctx.lineWidth = 0.5;
+                    for (let i = 0; i < particles.length; i++) {
+                        let conn = 0;
+                        for (let j = i + 1; j < particles.length && conn < 2; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            if (Math.abs(dx) < 100 && Math.abs(dy) < 100) {
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke(); conn++;
+                            }
                         }
                     }
                 }
