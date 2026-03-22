@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Smooth Scroll (Lenis) ──
     function initLenis() {
+        // Disable Lenis on mobile for better performance and native feel
+        if (window.matchMedia('(pointer: coarse)').matches) return;
+        
         const lenis = new Lenis();
         lenis.on('scroll', ScrollTrigger.update);
         gsap.ticker.add((time) => { lenis.raf(time * 1000); });
@@ -53,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Text Scramble ──
     function initTextScramble() {
+        if (window.matchMedia('(pointer: coarse)').matches) return; // Disable on mobile as it's CPU intensive
         const chars = '!<>-_\\/[]{}—=+*^?#________';
         const scrambleElements = document.querySelectorAll('.hero-name, .section-title');
 
@@ -158,9 +162,29 @@ document.addEventListener('DOMContentLoaded', () => {
             animId = requestAnimationFrame(animate);
         }
         animate();
+
+        // Pause animation when canvas is not in viewport
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    isActive = entry.isIntersecting && !document.hidden;
+                    if (isActive) {
+                        cancelAnimationFrame(animId);
+                        animate();
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(canvas);
+        }
+
         document.addEventListener('visibilitychange', () => {
             isActive = !document.hidden;
-            if (isActive) animate(); else cancelAnimationFrame(animId);
+            if (isActive) {
+                cancelAnimationFrame(animId);
+                animate();
+            } else {
+                cancelAnimationFrame(animId);
+            }
         });
     }
 
@@ -303,17 +327,26 @@ document.addEventListener('DOMContentLoaded', () => {
     function initActiveNav() {
         const sections = document.querySelectorAll('section[id]');
         const links = document.querySelectorAll('.nav-link');
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY + 200;
-            sections.forEach(sec => {
-                const top = sec.offsetTop, h = sec.offsetHeight, id = sec.id;
-                if (scrollY >= top && scrollY < top + h) {
-                    links.forEach(l => {
-                        l.classList.remove('active');
-                        if (l.getAttribute('href') === '#' + id) l.classList.add('active');
-                    });
-                }
-            });
-        }, { passive: true });
+        
+        // Use IntersectionObserver for better performance than scroll listener
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                rootMargin: '-20% 0px -70% 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        links.forEach(l => {
+                            l.classList.remove('active');
+                            if (l.getAttribute('href') === '#' + id) l.classList.add('active');
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        }
     }
 });
