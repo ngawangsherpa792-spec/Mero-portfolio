@@ -141,7 +141,7 @@ nav {
     background:rgba(0,212,255,0.08); border:1px solid rgba(0,212,255,0.2);
     padding:8px 20px; border-radius:40px;
     font-size:0.7rem; letter-spacing:2px; color:var(--accent);
-    margin-bottom:2rem; text-transform:uppercase;
+    margin: 0 auto 2rem auto; text-transform:uppercase;
 }
 .badge-dot {
     width:6px; height:6px; border-radius:50%;
