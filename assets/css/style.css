@@ -129,7 +129,7 @@ nav {
     padding-top:var(--header-h);
     background: radial-gradient(ellipse at 50% 0%, rgba(0,212,255,0.06) 0%, transparent 60%),
                 linear-gradient(rgba(6,6,8,0.6), rgba(6,6,8,1)),
-                url('../images/hero_bg.png') center/cover;
+                url('../images/hero_bg_new.png') center/cover;
     overflow:hidden;
     will-change: transform;
 }
@@ -416,6 +416,21 @@ section { padding:100px 0; }
     border-color:var(--accent); outline:none;
     background:rgba(0,212,255,0.03); box-shadow:0 0 0 3px rgba(0,212,255,0.08);
 }
+
+/* Form feedback */
+.form-feedback {
+    padding: 0; margin-bottom: 0;
+    border-radius: 8px; font-size: 0.85rem;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease, margin 0.4s ease;
+}
+.form-feedback.show { max-height: 80px; padding: 12px 16px; margin-bottom: 1.2rem; }
+.form-feedback.success { background: rgba(57, 255, 20, 0.08); border: 1px solid rgba(57, 255, 20, 0.25); color: var(--accent-green); }
+.form-feedback.error   { background: rgba(255, 60, 80, 0.08); border: 1px solid rgba(255, 60, 80, 0.25); color: #ff4d6d; }
+
+/* Button spinner */
+.btn-spinner { animation: spin 0.8s linear infinite; }
+.hidden { display: none !important; }
 
 /* ---- FOOTER ---- */
 footer {
