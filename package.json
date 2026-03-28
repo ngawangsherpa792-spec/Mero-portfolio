@@ -1,7 +1,7 @@
 {
   "name": "ngawang-portfolio",
   "version": "1.0.0",
-  "description": "Ngawang Sherpa Portfolio — Contact Server",
+  "description": "Ngawang Sherpa Portfolio",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
