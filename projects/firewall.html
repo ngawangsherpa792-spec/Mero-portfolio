@@ -24,12 +24,31 @@
     <main>
         <section class="project-hero">
             <div class="container project-hero-content">
-                <a href="../index.html#projects" class="back-link mono-text">Back to Projects</a>
-                <div class="project-badge mono-text">Cybersecurity</div>
+                <a href="../index.html#projects" class="back-link mono-text">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Projects
+                </a>
+                <div class="project-header-top">
+                    <div class="project-badge mono-text">Cybersecurity</div>
+                </div>
                 <h1 class="project-title glitch" data-text="Firewall & Surveillance">Firewall & Surveillance</h1>
-                <p class="project-summary">Enterprise-grade firewall implementation combined with an intelligent camera surveillance system using computer vision.</p>
-                <div class="project-tags">
-                    <span>PFSense</span><span>OpenCV</span><span>Network Security</span>
+                <p class="project-summary">Enterprise-grade network security integrated with intelligent AI-powered premises monitoring for total perimeter defense.</p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Infrastructure Lead</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Category</span>
+                        <span class="meta-value">Network Engineering</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2026</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -38,30 +57,79 @@
             <div class="container project-grid-layout">
                 <div class="project-main-content">
                     <div class="project-image-large">
-                        <img src="../assets/images/project_firewall.png" alt="Firewall & Surveillance System">
+                        <img src="../assets/images/project_firewall.png" alt="Firewall & Surveillance">
                     </div>
-                    <h2>The Vision</h2>
-                    <p>Securing a physical and digital perimeter requires a unified approach. This project integrates network-level security with physical monitoring powered by AI.</p>
-                    
-                    <h2>Key Components</h2>
-                    <ul class="project-features-list">
-                        <li>Custom PFSense implementation with strict IDS/IPS rules.</li>
-                        <li>Automated threat blocking based on real-time traffic analysis.</li>
-                        <li>OpenCV-based motion detection and object recognition for premises monitoring.</li>
-                        <li>Encrypted remote access for surveillance feeds.</li>
-                    </ul>
+                    <div class="project-description-block">
+                        <h2>Overview</h2>
+                        <p>Securing a physical and digital perimeter requires a unified approach. This project integrates network-level security via PFSense with physical monitoring powered by OpenCV and AI.</p>
+                        
+                        <h2>Key Features</h2>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <span class="feature-icon">🛡️</span>
+                                <h4>IDS/IPS Implementation</h4>
+                                <p>Custom Snort rules for real-time intrusion detection and automated threat blocking.</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">👁️</span>
+                                <h4>AI Surveillance</h4>
+                                <p>OpenCV-based motion detection and object recognition for secure premise monitoring.</p>
+                            </div>
+                        </div>
 
-                    <h2>Technical Implementation</h2>
-                    <p>The system uses a dedicated low-power server running PFSense for the firewall, and a separate edge device for OpenCV-driven surveillance, communicating via a secured local network.</p>
+                        <h2>The Solution</h2>
+                        <p>The system provides a robust defensive layer by combining deep packet inspection with real-time video analytics, all manageable through a secure remote dashboard.</p>
+                    </div>
                 </div>
                 <aside class="project-sidebar">
                     <div class="sidebar-box">
-                        <h3>Links</h3>
-                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-primary full-width">GitHub Repository</a>
+                        <span class="sidebar-heading">Technologies</span>
+                        <div class="tech-list">
+                            <span class="tech-tag">PFSense</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Network Security</span>
+                            <span class="tech-tag">VPN</span>
+                        </div>
                     </div>
                 </aside>
             </div>
         </section>
+
+        <section class="project-cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-glow"></div>
+                    <h2>Check out the code</h2>
+                    <p>Experience the project first-hand by exploring the repository on GitHub.</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-github magnetic-btn">
+                            <span>GitHub Repository</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17l9.2-9.2M17 17V7H7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="logo">NS<span class="accent">.</span></div>
+                <p class="footer-tagline">Cybersecurity & AI/ML Specialist</p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2026 Ngawang Sherpa. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/Hauntdog" class="social-link">GH</a>
+                <a href="#" class="social-link">LI</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/script.js"></script>
 </body>
+
 </html>

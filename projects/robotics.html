@@ -24,12 +24,31 @@
     <main>
         <section class="project-hero">
             <div class="container project-hero-content">
-                <a href="../index.html#projects" class="back-link mono-text">Back to Projects</a>
-                <div class="project-badge mono-text">AI / ML</div>
+                <a href="../index.html#projects" class="back-link mono-text">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Projects
+                </a>
+                <div class="project-header-top">
+                    <div class="project-badge mono-text">AI / ML</div>
+                </div>
                 <h1 class="project-title glitch" data-text="Open Claw-like Bot">Open Claw-like Bot</h1>
                 <p class="project-summary">Custom robotic arm system integrated with local AI for autonomous task execution and object manipulation.</p>
-                <div class="project-tags">
-                    <span>Robotics</span><span>Python</span><span>Neural Networks</span>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Robotics Engineer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Category</span>
+                        <span class="meta-value">Autonomous Robotics</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2026</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -38,30 +57,79 @@
             <div class="container project-grid-layout">
                 <div class="project-main-content">
                     <div class="project-image-large">
-                        <img src="../assets/images/project_robotics.png" alt="Robotics Project">
+                        <img src="../assets/images/project_robotics.png" alt="Open Claw-like Bot">
                     </div>
-                    <h2>The Concept</h2>
-                    <p>Robotics meets machine learning. This project focuses on building a low-cost, open-source robotic arm that can perform tasks autonomously based on visual feedback.</p>
-                    
-                    <h2>Key Features</h2>
-                    <ul class="project-features-list">
-                        <li>3D printed claw and arm structure for easy replication.</li>
-                        <li>Servo control using Arduino and Raspberry Pi.</li>
-                        <li>AI-driven object localizaton and grasping logic.</li>
-                        <li>Python-based control interface for high-level commands.</li>
-                    </ul>
+                    <div class="project-description-block">
+                        <h2>Overview</h2>
+                        <p>Robotics meets machine learning. This project focuses on building a low-cost, open-source robotic arm that can perform tasks autonomously based on visual feedback and neural control.</p>
+                        
+                        <h2>Key Features</h2>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <span class="feature-icon">🦾</span>
+                                <h4>3D Printed Design</h4>
+                                <p>Custom modular arm structure created for easy replication and maintenance.</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🧠</span>
+                                <h4>Neural Control</h4>
+                                <p>AI-driven object localization and grasping logic using Python-based neural nets.</p>
+                            </div>
+                        </div>
 
-                    <h2>Implementation Detail</h2>
-                    <p>The bot uses a neural network trained to recognize various objects on a flat surface, calculating the precise joint angles needed for a successful grasp.</p>
+                        <h2>The Solution</h2>
+                        <p>The bot calculates precise joint angles needed for successful grasps based on a real-time visual input feed, showcasing a practical integration of AI in physical systems.</p>
+                    </div>
                 </div>
                 <aside class="project-sidebar">
                     <div class="sidebar-box">
-                        <h3>Links</h3>
-                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-primary full-width">GitHub Repository</a>
+                        <span class="sidebar-heading">Technologies</span>
+                        <div class="tech-list">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Neural Networks</span>
+                            <span class="tech-tag">Arduino</span>
+                        </div>
                     </div>
                 </aside>
             </div>
         </section>
+
+        <section class="project-cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-glow"></div>
+                    <h2>Check out the code</h2>
+                    <p>Experience the project first-hand by exploring the repository on GitHub.</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-github magnetic-btn">
+                            <span>GitHub Repository</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17l9.2-9.2M17 17V7H7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="logo">NS<span class="accent">.</span></div>
+                <p class="footer-tagline">Cybersecurity & AI/ML Specialist</p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2026 Ngawang Sherpa. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/Hauntdog" class="social-link">GH</a>
+                <a href="#" class="social-link">LI</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/script.js"></script>
 </body>
+
 </html>

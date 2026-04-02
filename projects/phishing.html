@@ -24,12 +24,31 @@
     <main>
         <section class="project-hero">
             <div class="container project-hero-content">
-                <a href="../index.html#projects" class="back-link mono-text">Back to Projects</a>
-                <div class="project-badge mono-text">Cybersecurity</div>
+                <a href="../index.html#projects" class="back-link mono-text">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Projects
+                </a>
+                <div class="project-header-top">
+                    <div class="project-badge mono-text">Cybersecurity</div>
+                </div>
                 <h1 class="project-title glitch" data-text="Phishing Simulation">Phishing Simulation</h1>
-                <p class="project-summary">Comprehensive simulation platform to test and educate users on sophisticated attacks, identifying human vulnerabilities in the security chain.</p>
-                <div class="project-tags">
-                    <span>Social Engineering</span><span>HTML/JS</span><span>Analytics</span>
+                <p class="project-summary">Comprehensive simulation platform designed to test and educate users on sophisticated attacks, identifying human vulnerabilities.</p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Security Consultant</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Category</span>
+                        <span class="meta-value">Social Engineering</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2026</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -38,30 +57,78 @@
             <div class="container project-grid-layout">
                 <div class="project-main-content">
                     <div class="project-image-large">
-                        <img src="../assets/images/project_phishing.png" alt="Phishing Simulation Platform">
+                        <img src="../assets/images/project_phishing.png" alt="Phishing Simulation">
                     </div>
-                    <h2>Project Overview</h2>
-                    <p>Phishing remains the #1 entry point for cyberattacks. This project was developed as a controlled training tool for organizations to measure their staff's susceptibility to social engineering.</p>
-                    
-                    <h2>Key Features</h2>
-                    <ul class="project-features-list">
-                        <li>High-fidelity templates for popular services.</li>
-                        <li>Automated campaign management and email tracking.</li>
-                        <li>Non-intrusive data collection (no credentials stored, only click-through rates).</li>
-                        <li>Detailed analytics and vulnerability reporting.</li>
-                    </ul>
+                    <div class="project-description-block">
+                        <h2>Overview</h2>
+                        <p>Phishing remains the #1 entry point for most cyberattacks. This project was developed as a controlled training tool for organizations to measure susceptibility to social engineering.</p>
+                        
+                        <h2>Key Features</h2>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <span class="feature-icon">📧</span>
+                                <h4>Realistic Templates</h4>
+                                <p>High-fidelity mimics for popular services to test user awareness effectively.</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📊</span>
+                                <h4>Detailed Analytics</h4>
+                                <p>Track click-through rates and identify high-risk departments for training.</p>
+                            </div>
+                        </div>
 
-                    <h2>The Solution</h2>
-                    <p>By simulating real-world attacks, organizations can pinpoint departments or individuals requiring additional security awareness training, significantly reducing the actual risk of a breach.</p>
+                        <h2>The Solution</h2>
+                        <p>By simulating real-world attacks, the platform helps organizations proactively educate their staff, significantly reducing the likelihood of a successful breach.</p>
+                    </div>
                 </div>
                 <aside class="project-sidebar">
                     <div class="sidebar-box">
-                        <h3>Links</h3>
-                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-primary full-width">GitHub Repository</a>
+                        <span class="sidebar-heading">Technologies</span>
+                        <div class="tech-list">
+                            <span class="tech-tag">HTML5/CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Analytics API</span>
+                        </div>
                     </div>
                 </aside>
             </div>
         </section>
+
+        <section class="project-cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-glow"></div>
+                    <h2>Check out the code</h2>
+                    <p>Experience the project first-hand by exploring the repository on GitHub.</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-github magnetic-btn">
+                            <span>GitHub Repository</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17l9.2-9.2M17 17V7H7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="logo">NS<span class="accent">.</span></div>
+                <p class="footer-tagline">Cybersecurity & AI/ML Specialist</p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2026 Ngawang Sherpa. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/Hauntdog" class="social-link">GH</a>
+                <a href="#" class="social-link">LI</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/script.js"></script>
 </body>
+
 </html>

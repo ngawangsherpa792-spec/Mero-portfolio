@@ -4,22 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detailed overview of [Project Name] by Ngawang Sherpa.">
     <title>[Project Name] | Ngawang Sherpa</title>
-
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>NS</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Roboto+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/project-detail.css">
 </head>
 
 <body class="project-detail-body">
-    <!-- Navigation (Simplified) -->
     <header id="main-header">
         <nav>
             <div class="logo"><a href="../index.html">NS<span class="accent">.</span></a></div>
@@ -40,23 +30,24 @@
                     </svg>
                     Back to Projects
                 </a>
-                <div class="project-badge mono-text">[Category]</div>
+                <div class="project-header-top">
+                    <div class="project-badge mono-text">[Category]</div>
+                </div>
                 <h1 class="project-title glitch" data-text="[Project Name]">[Project Name]</h1>
-                <p class="project-summary">[Short summary of the project]</p>
+                <p class="project-summary">[Longer summary description...]</p>
+                
                 <div class="project-meta">
                     <div class="meta-item">
                         <span class="meta-label">Role</span>
-                        <span class="meta-value">Lead Developer & Researcher</span>
+                        <span class="meta-value">Lead Developer</span>
                     </div>
                     <div class="meta-item">
-                        <span class="meta-label">Duration</span>
-                        <span class="meta-value">[Duration]</span>
+                        <span class="meta-label">Category</span>
+                        <span class="meta-value">[Category Name]</span>
                     </div>
                     <div class="meta-item">
-                        <span class="meta-label">Tech Stack</span>
-                        <div class="project-tags">
-                            <span>[Tag 1]</span><span>[Tag 2]</span><span>[Tag 3]</span>
-                        </div>
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2026</span>
                     </div>
                 </div>
             </div>
@@ -66,46 +57,57 @@
             <div class="container project-grid-layout">
                 <div class="project-main-content">
                     <div class="project-image-large">
-                        <img src="../assets/images/[Project Image]" alt="[Project Name]">
+                        <img src="../assets/images/[Image]" alt="[Project Name]">
                     </div>
                     <div class="project-description-block">
                         <h2>Overview</h2>
-                        <p>[Detailed project overview...]</p>
+                        <p>[Overview text...]</p>
                         
-                        <h2>The Challenge</h2>
-                        <p>[What problem were you solving?]</p>
-
                         <h2>Key Features</h2>
-                        <ul class="project-features-list">
-                            <li>[Feature 1]</li>
-                            <li>[Feature 2]</li>
-                            <li>[Feature 3]</li>
-                        </ul>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <span class="feature-icon">🛡️</span>
+                                <h4>Security First</h4>
+                                <p>Description of security features...</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⚡</span>
+                                <h4>Fast Performance</h4>
+                                <p>Description of performance...</p>
+                            </div>
+                        </div>
 
-                        <h2>Solution & Impact</h2>
-                        <p>[How did you solve it and what was the result?]</p>
+                        <h2>The Solution</h2>
+                        <p>[Solution description...]</p>
                     </div>
                 </div>
                 <aside class="project-sidebar">
                     <div class="sidebar-box">
-                        <h3>Project Links</h3>
-                        <div class="sidebar-links">
-                            <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-primary full-width">
-                                <span>GitHub Repository</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M7 17l9.2-9.2M17 17V7H7" />
-                                </svg>
-                            </a>
-                            [Optional: Demo Link]
-                        </div>
-                    </div>
-                    <div class="sidebar-box">
-                        <h3>Tags</h3>
-                        <div class="project-tags">
-                            <span>[Tag]</span><span>[Tag]</span>
+                        <span class="sidebar-heading">Technologies</span>
+                        <div class="tech-list">
+                            <span class="tech-tag">Tech 1</span>
+                            <span class="tech-tag">Tech 2</span>
                         </div>
                     </div>
                 </aside>
+            </div>
+        </section>
+
+        <section class="project-cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-glow"></div>
+                    <h2>Check out the code</h2>
+                    <p>Experience the project first-hand by exploring the repository on GitHub.</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-github magnetic-btn">
+                            <span>GitHub Repository</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17l9.2-9.2M17 17V7H7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -122,12 +124,9 @@
             <div class="footer-right">
                 <a href="https://github.com/Hauntdog" class="social-link">GH</a>
                 <a href="#" class="social-link">LI</a>
-                <a href="#" class="social-link">TW</a>
             </div>
         </div>
     </footer>
-
     <script src="../assets/js/script.js"></script>
 </body>
-
 </html>

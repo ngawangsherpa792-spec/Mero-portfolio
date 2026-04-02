@@ -24,12 +24,31 @@
     <main>
         <section class="project-hero">
             <div class="container project-hero-content">
-                <a href="../index.html#projects" class="back-link mono-text">Back to Projects</a>
-                <div class="project-badge mono-text">AI / ML</div>
+                <a href="../index.html#projects" class="back-link mono-text">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Projects
+                </a>
+                <div class="project-header-top">
+                    <div class="project-badge mono-text">AI / ML</div>
+                </div>
                 <h1 class="project-title glitch" data-text="Spam Detection System">Spam Detection System</h1>
-                <p class="project-summary">NLP-based classification system for real-time, high-accuracy message filtering, designed for modern communication platforms.</p>
-                <div class="project-tags">
-                    <span>NLP</span><span>Scikit-learn</span><span>Python</span>
+                <p class="project-summary">NLP-based classification system for real-time high-accuracy message filtering, designed for large-scale platforms.</p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">ML Engineer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Category</span>
+                        <span class="meta-value">Natural Language Processing</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2026</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -38,30 +57,79 @@
             <div class="container project-grid-layout">
                 <div class="project-main-content">
                     <div class="project-image-large">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="NLP Spam Detection">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="Spam Detection System">
                     </div>
-                    <h2>The Logic</h2>
-                    <p>Traditional spam filters rely on simple keyword matching. This system uses advanced Natural Language Processing to understand the semantics and context of messages to identify sophisticated phishing and spam attempts.</p>
-                    
-                    <h2>Key Features</h2>
-                    <ul class="project-features-list">
-                        <li>TF-IDF vectorization for text feature extraction.</li>
-                        <li>Naive Bayes and Random Forest classifier training.</li>
-                        <li>Real-time classification API for seamless integration.</li>
-                        <li>Automated retraining pipeline as new spam patterns emerge.</li>
-                    </ul>
+                    <div class="project-description-block">
+                        <h2>Overview</h2>
+                        <p>Traditional spam filters rely on simple keyword matching. This system uses advanced Natural Language Processing to understand semantics and context to identify sophisticated spam attempts.</p>
+                        
+                        <h2>Key Features</h2>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <span class="feature-icon">🔍</span>
+                                <h4>Semantic Analysis</h4>
+                                <p>TF-IDF vectorization and Word2Vec embeddings for deep contextual understanding.</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🛡️</span>
+                                <h4>High Precision</h4>
+                                <p>Consistently achieves over 98% accuracy on benchmark classification datasets.</p>
+                            </div>
+                        </div>
 
-                    <h2>The Result</h2>
-                    <p>The system consistently achieves over 98% accuracy on benchmark datasets, significantly reducing the amount of malicious and unwanted content reaching end-users.</p>
+                        <h2>The Solution</h2>
+                        <p>The system leverages Scikit-learn and complex classification models to provide a real-time message filtering API that adapts to evolving spam patterns.</p>
+                    </div>
                 </div>
                 <aside class="project-sidebar">
                     <div class="sidebar-box">
-                        <h3>Links</h3>
-                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-primary full-width">GitHub Repository</a>
+                        <span class="sidebar-heading">Technologies</span>
+                        <div class="tech-list">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">TensorFlow</span>
+                        </div>
                     </div>
                 </aside>
             </div>
         </section>
+
+        <section class="project-cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-glow"></div>
+                    <h2>Check out the code</h2>
+                    <p>Experience the project first-hand by exploring the repository on GitHub.</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-github magnetic-btn">
+                            <span>GitHub Repository</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17l9.2-9.2M17 17V7H7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="logo">NS<span class="accent">.</span></div>
+                <p class="footer-tagline">Cybersecurity & AI/ML Specialist</p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2026 Ngawang Sherpa. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/Hauntdog" class="social-link">GH</a>
+                <a href="#" class="social-link">LI</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/script.js"></script>
 </body>
+
 </html>

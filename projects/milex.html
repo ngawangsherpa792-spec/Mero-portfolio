@@ -24,12 +24,31 @@
     <main>
         <section class="project-hero">
             <div class="container project-hero-content">
-                <a href="../index.html#projects" class="back-link mono-text">Back to Projects</a>
-                <div class="project-badge mono-text">AI / ML</div>
+                <a href="../index.html#projects" class="back-link mono-text">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Projects
+                </a>
+                <div class="project-header-top">
+                    <div class="project-badge mono-text">AI / ML</div>
+                </div>
                 <h1 class="project-title glitch" data-text="CLI Agent (MILEX)">CLI Agent (MILEX)</h1>
-                <p class="project-summary">Powerful terminal-based AI agent optimized for low-resource environments, using local LLMs for task automation.</p>
-                <div class="project-tags">
-                    <span>LLM</span><span>Ollama</span><span>Python</span><span>Agentic AI</span>
+                <p class="project-summary">Powerful terminal-based AI agent optimized for low-resource environments, bringing the power of local LLMs to your daily workflow.</p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Lead Developer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Category</span>
+                        <span class="meta-value">Agentic AI</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Year</span>
+                        <span class="meta-value">2026</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -40,28 +59,88 @@
                     <div class="project-image-large">
                         <img src="../milex.png" alt="MILEX CLI Agent">
                     </div>
-                    <h2>The Mission</h2>
-                    <p>MILEX was created to bring the power of AI to the command line without relying on expensive, cloud-based APIs. It allows for private, high-performance task execution directly on the user's machine.</p>
-                    
-                    <h2>Key Features</h2>
-                    <ul class="project-features-list">
-                        <li>Integration with Ollama for locally running models like Llama 3 or Mistral.</li>
-                        <li>Automated code generation and shell script execution.</li>
-                        <li>Local file system context for intelligent file editing and project management.</li>
-                        <li>Support for RAG (Retrieval-Augmented Generation) on local documentation.</li>
-                    </ul>
+                    <div class="project-description-block">
+                        <h2>Overview</h2>
+                        <p>MILEX was created to bridge the gap between complex AI capabilities and the simplicity of the command line. Unlike cloud-based agents, MILEX runs entirely on your local machine, ensuring absolute privacy and zero latency.</p>
+                        
+                        <h2>Key Features</h2>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <span class="feature-icon">🤖</span>
+                                <h4>Local-First AI</h4>
+                                <p>Leverages Ollama for running state-of-the-art LLMs like Llama 3 and Mistral privately.</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🛠️</span>
+                                <h4>Tool Integration</h4>
+                                <p>Automates file editing, shell command execution, and local context searching.</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🚀</span>
+                                <h4>Optimized Performance</h4>
+                                <p>Low resource footprint, designed to run smoothly on standard developer laptops.</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📂</span>
+                                <h4>System Context</h4>
+                                <p>Understands your project structure and local files for more relevant assistance.</p>
+                            </div>
+                        </div>
 
-                    <h2>Technical Detail</h2>
-                    <p>MILEX uses a custom-built agentic loop in Python, managing model interactions, tool calls, and state to ensure complex multi-step tasks are completed successfully with minimal user input.</p>
+                        <h2>The Solution</h2>
+                        <p>By integrating local LLM capabilities directly into the terminal, MILEX provides a high-speed, private, and powerful assistant that can handle repetitive developer tasks without ever leaving the shell.</p>
+                    </div>
                 </div>
                 <aside class="project-sidebar">
                     <div class="sidebar-box">
-                        <h3>Links</h3>
-                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-primary full-width">GitHub Repository</a>
+                        <span class="sidebar-heading">Technologies</span>
+                        <div class="tech-list">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Ollama</span>
+                            <span class="tech-tag">LLM</span>
+                            <span class="tech-tag">Bash</span>
+                            <span class="tech-tag">LangChain</span>
+                        </div>
                     </div>
                 </aside>
             </div>
         </section>
+
+        <section class="project-cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-glow"></div>
+                    <h2>Check out the code</h2>
+                    <p>Experience the project first-hand by exploring the repository on GitHub.</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-github magnetic-btn">
+                            <span>GitHub Repository</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 17l9.2-9.2M17 17V7H7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="logo">NS<span class="accent">.</span></div>
+                <p class="footer-tagline">Cybersecurity & AI/ML Specialist</p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2026 Ngawang Sherpa. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/Hauntdog" class="social-link">GH</a>
+                <a href="#" class="social-link">LI</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/script.js"></script>
 </body>
+
 </html>
