@@ -1,0 +1,195 @@
+/* ================================================
+   Ngawang Sherpa Portfolio — Project Detail CSS
+   ================================================ */
+
+.project-detail-body {
+    background: var(--bg-dark);
+}
+
+.project-hero {
+    padding-top: calc(var(--header-h) + 60px);
+    padding-bottom: 60px;
+    background: linear-gradient(180deg, rgba(6, 6, 8, 1) 0%, var(--bg-surface) 100%);
+    border-bottom: 1px solid var(--border);
+}
+
+.project-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    color: var(--accent);
+    transform: translateX(-5px);
+}
+
+.project-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--accent-glow);
+    border: 1px solid var(--border-hover);
+    border-radius: 40px;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.project-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.project-summary {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-bottom: 3rem;
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.meta-label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.meta-value {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Content Layout */
+.project-content-section {
+    padding: 80px 0;
+}
+
+.project-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 5rem;
+}
+
+.project-main-content h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    border-left: 4px solid var(--accent);
+    padding-left: 1.2rem;
+}
+
+.project-main-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.project-image-large {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 3rem;
+    border: 1px solid var(--border);
+}
+
+.project-image-large img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-features-list {
+    margin-top: 1.5rem;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.project-features-list li {
+    position: relative;
+    padding-left: 2rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.project-features-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Sidebar */
+.sidebar-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.sidebar-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn.full-width {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Responsive Decorators */
+@media (max-width: 968px) {
+    .project-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-features-list {
+        grid-template-columns: 1fr;
+    }
+}
