@@ -97,7 +97,11 @@ nav {
     display:flex; justify-content:space-between; align-items:center;
     padding:0 2rem;
 }
-.logo { font-size:1.6rem; font-weight:900; letter-spacing:-1px; }
+.logo { display: flex; align-items: center; gap: 10px; height: 100%; }
+.logo img { height: 32px; width: auto; object-fit: contain; transition: var(--transition); }
+.logo:hover img { transform: scale(1.05); }
+.footer-left .logo img { height: 28px; }
+
 .nav-links { display:flex; gap:2rem; }
 .nav-link {
     font-size:0.8rem; font-weight:500; color:var(--text-muted);
