@@ -44,17 +44,23 @@ module.exports = async function handler(req, res) {
     const safeEmail   = sanitize(email);
     const safeMessage = sanitize(message);
 
-    const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    const nodemailer = require('nodemailer');
 
-    if (!RESEND_API_KEY) {
-        console.error('RESEND_API_KEY is not set.');
-        return res.status(500).json({ success: false, message: 'Server configuration error.' });
-    }
-
-    const toEmail = 'ngawangsherpa792@gmail.com';
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.SMTP,
+            pass: process.env.app_password,
+        },
+    });
 
     // ── Styled notification email to YOU ────────────────────
-    const notifyHtml = `
+    const mailOptions = {
+        from: `"Portfolio Contact" <${process.env.SMTP}>`,
+        to: process.env.SMTP,
+        replyTo: safeEmail,
+        subject: `📬 New Message from ${safeName} — Portfolio`,
+        html: `
       <div style="font-family:'Segoe UI',sans-serif;max-width:600px;margin:0 auto;background:#060608;color:#eaeaf0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);">
         <div style="background:linear-gradient(135deg,#00d4ff22,#8338ec22);padding:30px;border-bottom:1px solid rgba(0,212,255,0.2);">
           <h1 style="margin:0;color:#00d4ff;font-size:22px;">New Portfolio Contact</h1>
@@ -75,18 +81,20 @@ module.exports = async function handler(req, res) {
             <p style="margin:0 0 8px;color:#8888a0;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Message</p>
             <p style="margin:0;color:#eaeaf0;line-height:1.7;white-space:pre-wrap;">${safeMessage}</p>
           </div>
-          <div style="margin-top:20px;">
-            <a href="mailto:${safeEmail}" style="display:inline-block;background:#00d4ff;color:#000;padding:10px 22px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;">↩ Reply to ${safeName}</a>
-          </div>
         </div>
         <div style="padding:20px 30px;background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.06);font-size:11px;color:#555566;text-align:center;">
           Sent via portfolio contact form
         </div>
       </div>
-    `;
+    `,
+    };
 
     // ── Auto-reply to sender ─────────────────────────────────
-    const autoReplyHtml = `
+    const autoReplyOptions = {
+        from: `"Ngawang Sherpa" <${process.env.SMTP}>`,
+        to: safeEmail,
+        subject: `✅ Got your message, ${safeName}!`,
+        html: `
       <div style="font-family:'Segoe UI',sans-serif;max-width:600px;margin:0 auto;background:#060608;color:#eaeaf0;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);">
         <div style="background:linear-gradient(135deg,#00d4ff22,#8338ec22);padding:30px;border-bottom:1px solid rgba(0,212,255,0.2);">
           <h1 style="margin:0;color:#00d4ff;font-size:22px;">Message Received!</h1>
@@ -104,50 +112,13 @@ module.exports = async function handler(req, res) {
           &copy; 2026 Ngawang Sherpa &bull; Kathmandu, Nepal
         </div>
       </div>
-    `;
+    `,
+    };
 
     try {
-        // Send notification to you
-        const notifyRes = await fetch('https://api.resend.com/emails', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${RESEND_API_KEY}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                from: 'Portfolio Contact <onboarding@resend.dev>',
-                to: [toEmail],
-                reply_to: safeEmail,
-                subject: `📬 New Message from ${safeName} — Portfolio`,
-                html: notifyHtml,
-            }),
-        });
-
-        if (!notifyRes.ok) {
-            const errData = await notifyRes.json();
-            console.error('Resend notify error:', JSON.stringify(errData));
-            return res.status(500).json({ success: false, message: 'Failed to send message. Please try again later.' });
-        }
-
-        // Send auto-reply to sender (best effort, don't fail if this fails)
-        try {
-            await fetch('https://api.resend.com/emails', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${RESEND_API_KEY}`,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    from: 'Ngawang Sherpa <onboarding@resend.dev>',
-                    to: [safeEmail],
-                    subject: `✅ Got your message, ${safeName}!`,
-                    html: autoReplyHtml,
-                }),
-            });
-        } catch (_) { /* auto-reply failure is non-critical */ }
-
+        await transporter.sendMail(mailOptions);
+        await transporter.sendMail(autoReplyOptions);
         return res.status(200).json({ success: true, message: "Your message has been sent! I'll be in touch soon." });
-
     } catch (err) {
         console.error('Contact handler error:', err.message);
         return res.status(500).json({ success: false, message: 'Failed to send message. Please try again later.' });

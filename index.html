@@ -568,7 +568,7 @@
                 setLoading(true);
 
                 try {
-                    const res = await fetch('https://formspree.io/f/mqakeekg', {
+                    const res = await fetch('/api/contact', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ name, email, message }),
@@ -579,8 +579,7 @@
                         showFeedback('✅ Message sent! I\'ll be in touch soon.', 'success');
                         form.reset();
                     } else {
-                        const data = await res.json().catch(() => ({}));
-                        showFeedback('❌ ' + (data.error || 'Something went wrong. Please try again.'), 'error');
+                        showFeedback('❌ ' + (data.message || 'Something went wrong. Please try again.'), 'error');
                     }
                 } catch (err) {
                     showFeedback('❌ Network error. Please check your connection and try again.', 'error');
