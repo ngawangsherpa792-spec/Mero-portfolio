@@ -1,3 +1,5 @@
+const nodemailer = require('nodemailer');
+
 // Rate limiting store (in-memory, resets on cold start)
 const rateLimitStore = {};
 
@@ -11,6 +13,14 @@ function checkRateLimit(ip) {
     rateLimitStore[ip].push(now);
     return true;
 }
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.SMTP,
+        pass: process.env.app_password,
+    },
+});
 
 module.exports = async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -29,6 +39,7 @@ module.exports = async function handler(req, res) {
     }
 
     const { name, email, message } = req.body || {};
+    console.log(`Payload received from ${ip}:`, { name, email });
 
     // Validation
     if (!name || !email || !message) {
@@ -43,16 +54,6 @@ module.exports = async function handler(req, res) {
     const safeName    = sanitize(name);
     const safeEmail   = sanitize(email);
     const safeMessage = sanitize(message);
-
-    const nodemailer = require('nodemailer');
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.SMTP,
-            pass: process.env.app_password,
-        },
-    });
 
     // ── Styled notification email to YOU ────────────────────
     const mailOptions = {
@@ -116,11 +117,14 @@ module.exports = async function handler(req, res) {
     };
 
     try {
+        console.log('Attempting to send email via SMTP...');
         await transporter.sendMail(mailOptions);
+        console.log('Notification email sent safely.');
         await transporter.sendMail(autoReplyOptions);
+        console.log('Auto-reply email sent safely.');
         return res.status(200).json({ success: true, message: "Your message has been sent! I'll be in touch soon." });
     } catch (err) {
-        console.error('Contact handler error:', err.message);
-        return res.status(500).json({ success: false, message: 'Failed to send message. Please try again later.' });
+        console.error('SMTP Error in Vercel function:', err.message);
+        return res.status(500).json({ success: false, message: 'Failed to send message: ' + err.message });
     }
 };

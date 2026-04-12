@@ -45,6 +45,7 @@ transporter.verify((error) => {
 
 // ── Contact Form Route ──────────────────────────────────────
 app.post('/api/contact', contactLimiter, async (req, res) => {
+  console.log('Incoming contact request:', req.body);
   const { name, email, message } = req.body;
 
   // Basic validation
