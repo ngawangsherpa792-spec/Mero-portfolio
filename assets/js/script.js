@@ -247,11 +247,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const current = phrases[phraseIdx];
             if (deleting) {
                 el.textContent = current.substring(0, charIdx--);
-                if (charIdx < 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; setTimeout(type, 500); return; }
+                if (charIdx < 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; setTimeout(type, 400); return; }
                 setTimeout(type, 40);
             } else {
                 el.textContent = current.substring(0, charIdx++);
-                if (charIdx > current.length) { deleting = true; setTimeout(type, 2000); return; }
+                if (charIdx > current.length) { deleting = true; setTimeout(type, 1200); return; }
                 setTimeout(type, 80);
             }
         }
