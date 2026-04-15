@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Open-source AI-driven robotic arm (VONBOT) by Ngawang Sherpa. Features autonomous object manipulation and neural-control logic.">
+    <meta name="description"
+        content="VONBOT — An open-source, Telegram-integrated robotic claw bot by Ngawang Sherpa. Features remote command execution and modular robotics design.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://ngawang.tech/projects/robotics.html">
-    <title>VONBOT | Ngawang Sherpa</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/project-detail.css">
-        <!-- Favicon -->
+    <link rel="canonical" href="https://ngawang.tech/projects/vonbot.html">
+    <title>VONBOT | Open Claw Agent | Ngawang Sherpa</title>
+    <link rel="stylesheet" href="../assets/css/style.css?v=5">
+    <link rel="stylesheet" href="../assets/css/project-detail.css?v=5">
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png?v=5">
     <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/icons/favicon-48x48.png?v=5">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png?v=5">
@@ -24,7 +25,8 @@
 <body class="project-detail-body">
     <header id="main-header">
         <nav>
-            <div class="logo"><a href="../index.html"><img src="../assets/images/logo.png?v=5" alt="Ngawang Sherpa logo"></a></div>
+            <div class="logo"><a href="../index.html"><img src="../assets/images/logo.png?v=5"
+                        alt="Ngawang Sherpa logo"></a></div>
             <ul class="nav-links">
                 <li><a href="../index.html#hero" class="nav-link">Home</a></li>
                 <li><a href="../index.html#projects" class="nav-link active">Projects</a></li>
@@ -43,19 +45,19 @@
                     Back to Projects
                 </a>
                 <div class="project-header-top">
-                    <div class="project-badge mono-text">AI / ML</div>
+                    <div class="project-badge mono-text">Robotics / IoT</div>
                 </div>
-                <h1 class="project-title glitch" data-text="Open Claw-like Bot">Open Claw-like Bot</h1>
-                <p class="project-summary">Open claw like bot which will perform task that hyou have given it.</p>
+                <h1 class="project-title glitch" data-text="VONBOT: Open Claw Agent">VONBOT: Open Claw Agent</h1>
+                <p class="project-summary">A remote-controlled, open-source claw agent system integrated with Telegram for executing commands from anywhere in the world.</p>
 
                 <div class="project-meta">
                     <div class="meta-item">
                         <span class="meta-label">Role</span>
-                        <span class="meta-value">Robotics Engineer</span>
+                        <span class="meta-value">Lead Developer</span>
                     </div>
                     <div class="meta-item">
                         <span class="meta-label">Category</span>
-                        <span class="meta-value">Autonomous Robotics</span>
+                        <span class="meta-value">Internet of Things (IoT)</span>
                     </div>
                     <div class="meta-item">
                         <span class="meta-label">Year</span>
@@ -69,42 +71,55 @@
             <div class="container project-grid-layout">
                 <div class="project-main-content">
                     <div class="project-image-large">
-                        <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=1200&q=80" alt="Open Claw-like Bot">
+                        <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=1200&q=80"
+                            alt="VONBOT Robotic Claw Interface">
                     </div>
                     <div class="project-description-block">
                         <h2>Overview</h2>
-                        <p>Robotics meets machine learning. This project focuses on building a low-cost, open-source
-                            robotic arm that can perform tasks autonomously based on visual feedback and neural control.
-                        </p>
+                        <p>VONBOT is a cutting-edge autonomous project that bridges hardware and instant messaging. It features a precision claw-like mechanism designed for delicate object manipulation, all controllable through a secure Telegram Agent interface. This setup allows for true remote operation without the need for complex custom client applications.</p>
 
                         <h2>Key Features</h2>
                         <div class="features-grid">
                             <div class="feature-item">
-                                <span class="feature-icon">🦾</span>
-                                <h4>3D Printed Design</h4>
-                                <p>Custom modular arm structure created for easy replication and maintenance.</p>
+                                <span class="feature-icon">🛡️</span>
+                                <h4>Telegram Integration</h4>
+                                <p>Control your bot securely using standard Telegram API commands from any device.</p>
                             </div>
                             <div class="feature-item">
-                                <span class="feature-icon">🧠</span>
-                                <h4>Neural Control</h4>
-                                <p>AI-driven object localization and grasping logic using Python-based neural nets.</p>
+                                <span class="feature-icon">🔓</span>
+                                <h4>Open Source Logic</h4>
+                                <p>Built with modular Python and C++ code, making the bot easy to customize for new tasks.</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⛓️</span>
+                                <h4>Chain Reaction Tasks</h4>
+                                <p>Script complex movements into simple single-word triggers for high-efficiency operation.</p>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📡</span>
+                                <h4>Over-the-Air Setup</h4>
+                                <p>Update movements and configurations remotely via Wi-Fi connectivity.</p>
                             </div>
                         </div>
 
-                        <h2>The Solution</h2>
-                        <p>The bot calculates precise joint angles needed for successful grasps based on a real-time
-                            visual input feed, showcasing a practical integration of AI in physical systems.</p>
+                        <h2>The Technical Challenge</h2>
+                        <p>The primary challenge was ensuring low-latency communication between the Telegram servers and the local hardware. By utilizing a hybrid polling/webhook approach and a optimized command parser, VONBOT achieves near-instant response times for critical hardware movements.</p>
                     </div>
                 </div>
                 <aside class="project-sidebar">
                     <div class="sidebar-box">
-                        <span class="sidebar-heading">Technologies</span>
+                        <span class="sidebar-heading">Stack</span>
                         <div class="tech-list">
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Neural Networks</span>
-                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">Telegram API</span>
+                            <span class="tech-tag">C++ / Arduino</span>
+                            <span class="tech-tag">ESP32</span>
+                            <span class="tech-tag">SolidWorks</span>
                         </div>
+                    </div>
+                    <div class="sidebar-box mt-30">
+                        <span class="sidebar-heading">Availability</span>
+                        <p class="mono-text" style="font-size: 0.8rem; color: var(--accent);">STABLE RELEASE v1.2</p>
                     </div>
                 </aside>
             </div>
@@ -114,11 +129,11 @@
             <div class="container">
                 <div class="cta-card">
                     <div class="cta-glow"></div>
-                    <h2>Check my GitHub</h2>
-                    <p>Experience the project first-hand by exploring the repository on GitHub.</p>
+                    <h2>Explore the Agent Architecture</h2>
+                    <p>View the schematics and follow the setup guide on my GitHub to build your own VONBOT Agent.</p>
                     <div class="cta-buttons">
                         <a href="https://github.com/Hauntdog" target="_blank" class="btn btn-github magnetic-btn">
-                            <span>GitHub Repository</span>
+                            <span>GitHub Source</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M7 17l9.2-9.2M17 17V7H7" />
@@ -134,7 +149,7 @@
         <div class="container footer-content">
             <div class="footer-left">
                 <div class="logo"><img src="../assets/images/logo.png?v=5" alt="Ngawang Sherpa logo"></div>
-                <p class="footer-tagline">Cybersecurity & AI/ML Specialist</p>
+                <p class="footer-tagline">Robotics & IoT Innovations</p>
             </div>
             <div class="footer-center">
                 <p>&copy; 2026 Ngawang Sherpa. All rights reserved.</p>
@@ -145,7 +160,7 @@
             </div>
         </div>
     </footer>
-    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/script.js?v=5"></script>
 </body>
 
 </html>

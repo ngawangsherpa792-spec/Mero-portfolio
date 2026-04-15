@@ -16,7 +16,7 @@ A premium, high-performance cybersecurity and AI/ML portfolio website. This proj
   - `malware-dev.html`: Custom Malware Development.
   - `firewall.html`: Firewall & Surveillance.
   - `phishing.html`: Phishing Simulation.
-  - `robotics.html`: VONBOT (Open Claw-like Bot).
+  - `Vonbot.html`: VONBOT (Open Claw-like Agent).
   - `milex.html`: MILEX (CLI Agent).
   - `spam-detection.html`: Spam Detection System.
   - `yolo.html`: YOLO Object Detection.
@@ -30,11 +30,11 @@ A premium, high-performance cybersecurity and AI/ML portfolio website. This proj
 1. **Custom Malware Development**: Research on attack vectors and defensive countermeasures.
 2. **Firewall & Surveillance**: PFSense network security combined with AI premises monitoring.
 3. **Phishing Simulation**: Training platform for identifying human vulnerabilities to social engineering.
-4. **VONBOT**: Custom robotic arm system with AI-driven autonomous task execution.
+4. **VONBOT**: Custom robotic arm system with intelligent agent-driven task execution.
 5. **MILEX (CLI Agent)**: Local-first terminal AI agent using Ollama for privacy and speed.
 6. **Spam Detection System**: High-accuracy NLP-based message filtering.
 7. **YOLO Object Detection**: Real-time security object detection using YOLOv8 and TensorRT.
-8. **n8n AI Chatbot**: Intelligent workflow automation chatbot.
+8. **n8n AI Agent**: Intelligent workflow automation agent.
 
 ## 🎨 Design Principles
 - **Aesthetic**: Futuristic, Dark Mode, Cyan/Purple accent glows.
@@ -49,4 +49,4 @@ A premium, high-performance cybersecurity and AI/ML portfolio website. This proj
 - [x] Premium UI overhaul for project detail pages.
 - [x] Fixed nested anchor tag issues in the main project grid.
 - [x] Moved GitHub links to a dedicated "Check my GitHub" bottom section.
-- [x] Renamed Robotics project to **VONBOT**.
+- [x] Renamed Robotics project to **VONBOT Agent**.
