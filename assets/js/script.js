@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── 3D Tilt Effect ──
     function initTiltEffect() {
         if (window.matchMedia('(pointer: coarse)').matches) return;
-        const cards = document.querySelectorAll('.expertise-card');
+        const cards = document.querySelectorAll('.expertise-card, .cert-card');
         cards.forEach(card => {
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.to(outer, { x: e.clientX, y: e.clientY, xPercent: -50, yPercent: -50, duration: 0.15 });
             gsap.to(inner, { x: e.clientX, y: e.clientY, xPercent: -50, yPercent: -50, duration: 0.05 });
         });
-        document.querySelectorAll('a, button, .project-card, .expertise-card, .skill-pill, .contact-card').forEach(el => {
+        document.querySelectorAll('a, button, .project-card, .expertise-card, .cert-card, .skill-pill, .contact-card').forEach(el => {
             el.addEventListener('mouseenter', () => outer.classList.add('hovering'));
             el.addEventListener('mouseleave', () => outer.classList.remove('hovering'));
         });
